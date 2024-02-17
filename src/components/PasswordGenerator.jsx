@@ -20,7 +20,7 @@ const PasswordGenerator = () => {
         useState("Generated Password")
 
     const scramblePass = (fx, el) => {
-        fx.setText(el?.innerText || '').then(() => {
+        fx.setText(el?.innerText || "").then(() => {
             setTimeout(() => {
                 scramblePass
             }, 800)
@@ -53,8 +53,7 @@ const PasswordGenerator = () => {
             return
         } else if (passwordLength > 64) {
             toast("Max 64 length is allowed", toastAnimation)
-        } 
-        else {
+        } else {
             let el = document.querySelector(".output-password")
             el.innerText = password
             setGeneratedPassword(password)
@@ -99,6 +98,8 @@ const PasswordGenerator = () => {
                             <input
                                 className="w-20 text-right"
                                 type="number"
+                                inputMode="numeric"
+                                pattern="[0-9]*"
                                 value={passwordLength}
                                 onChange={(e) =>
                                     setPasswordLength(
