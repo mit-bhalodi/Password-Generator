@@ -79,14 +79,11 @@ const PasswordGenerator = () => {
                     </div>
 
                     {/* Output */}
-                    <div className="p-4 xl:p-6 border-t border-black flex flex-row justify-between items-center gap-2 lg:gap-4">
+                    <div className="p-4 xl:p-6 border-t border-black flex flex-row justify-between items-center gap-2 lg:gap-4" onClick={copyPassword}>
                         <p className="text-gray-500 text-sm lg:text-base output-password break-all">
                             {generatedPassword}
                         </p>
-                        <FaCopy
-                            className="text-base lg:text-xl cursor-pointer"
-                            onClick={copyPassword}
-                        />
+                        <FaCopy className="text-base lg:text-xl cursor-pointer" />
                     </div>
 
                     {/* Content */}
